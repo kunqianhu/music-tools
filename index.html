@@ -14,9 +14,20 @@
     line-height: 1.5;
   }
   main { max-width: 640px; margin: 0 auto; padding: 32px 20px 48px; }
-  h1 { font-size: 28px; margin: 0 0 4px; }
-  h1 span { display: block; font-size: 20px; color: #666; font-weight: normal; margin-top: 4px; }
-  .intro { color: #555; margin: 0 0 24px; }
+  header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+  h1 { font-size: 28px; margin: 0; }
+  #langToggle {
+    flex: none;
+    margin-top: 4px;
+    padding: 8px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #222;
+    background: #fff;
+    border: 1px solid #e5ddd2;
+    border-radius: 999px;
+    cursor: pointer;
+  }
   .card {
     display: block;
     text-decoration: none;
@@ -30,42 +41,64 @@
   }
   .card:active { background: #f5efe8; }
   .card h2 { font-size: 20px; margin: 0 0 4px; }
-  .card h2 span { display: block; font-size: 16px; color: #666; font-weight: normal; margin-top: 2px; }
   .card p { margin: 0; color: #555; }
   .card .open { display: inline-block; margin-top: 12px; font-weight: 600; color: #8a5a00; }
   footer { color: #888; font-size: 13px; margin-top: 28px; text-align: center; }
+  body.lang-zh .en { display: none; }
+  body:not(.lang-zh) .zh { display: none; }
 </style>
 </head>
 <body>
 <main>
-  <h1>My Music Tools <span>我的音乐工具</span></h1>
-  <p class="intro">Tap a tool to open it. / 点一个工具打开它。</p>
+  <header>
+    <h1><span class="en">My Music Tools</span><span class="zh">我的音乐工具</span></h1>
+    <button id="langToggle" type="button">中文</button>
+  </header>
 
   <a class="card" href="https://muse.ai/s/digital-keyboard-xyi6xixzvd1qdc/_6ju1pQISK4-MeqeimocD2SXVVRnXh_jVbFQlKx3H_g" target="_blank" rel="noopener">
-    <h2>Chords Ear Training <span>和弦练耳</span></h2>
-    <p>Chord ear training: 42 jazz chord types, random chord questions, and distance patterns. / 和弦练耳：42 种爵士和弦、随机出题、距离模式。</p>
-    <span class="open">Open → 打开</span>
+    <h2><span class="en">Chords Ear Training</span><span class="zh">和弦练耳</span></h2>
+    <p><span class="en">Chord ear training: 42 jazz chord types, random chord questions, and distance patterns.</span><span class="zh">和弦练耳：42 种爵士和弦、随机出题、距离模式。</span></p>
+    <span class="open"><span class="en">Open →</span><span class="zh">打开 →</span></span>
   </a>
 
   <a class="card" href="https://muse.ai/s/basic-ear-training-xmxw6xixcpw7xknk/2i9ne8obI8iP2APTl1LA338XwwnDVB6JyvWVvoQy-pI" target="_blank" rel="noopener">
-    <h2>Basic Ear Training <span>基础练耳</span></h2>
-    <p>Single-note ear training on all 88 piano keys — guess the note before revealing the answer. / 88 键单音练耳，先猜音名再揭晓答案。</p>
-    <span class="open">Open → 打开</span>
+    <h2><span class="en">Basic Ear Training</span><span class="zh">基础练耳</span></h2>
+    <p><span class="en">Single-note ear training on all 88 piano keys — guess the note before revealing the answer.</span><span class="zh">88 键单音练耳，先猜音名再揭晓答案。</span></p>
+    <span class="open"><span class="en">Open →</span><span class="zh">打开 →</span></span>
   </a>
 
   <a class="card" href="https://muse.ai/s/jue-shi-gang-qin-xue-xi-bi-ji-xbd6xcxx5ippxoz/9F91Cqt6g5LdgFqf069G8OKtgkYW1e0Wm1gSXjbyQ3g" target="_blank" rel="noopener">
-    <h2>Jazz Piano Study Notes <span>《爵士钢琴学习笔记》</span></h2>
-    <p>A 10-chapter jazz piano e-book, bilingual. / 十章爵士钢琴学习笔记，中英双语。</p>
-    <span class="open">Open → 打开</span>
+    <h2><span class="en">Jazz Piano Study Notes</span><span class="zh">《爵士钢琴学习笔记》</span></h2>
+    <p><span class="en">A 10-chapter jazz piano e-book, bilingual.</span><span class="zh">十章爵士钢琴学习笔记，中英双语。</span></p>
+    <span class="open"><span class="en">Open →</span><span class="zh">打开 →</span></span>
   </a>
 
   <a class="card" href="https://muse.ai/s/music-practice-planner-xta6txa9oxsxixqxf/1o1cNX2UBkSM0-N7AHc1MPj37x0BHWy8GuQNaRy65Tc" target="_blank" rel="noopener">
-    <h2>Music Practice Planner <span>练琴计划</span></h2>
-    <p>Daily practice rotation planner — it starts empty for each visitor. / 每日练琴轮换计划，每位打开的人都从空白开始。</p>
-    <span class="open">Open → 打开</span>
+    <h2><span class="en">Music Practice Planner</span><span class="zh">练琴计划</span></h2>
+    <p><span class="en">Daily practice rotation planner — it starts empty for each visitor.</span><span class="zh">每日练琴轮换计划，每位打开的人都从空白开始。</span></p>
+    <span class="open"><span class="en">Open →</span><span class="zh">打开 →</span></span>
   </a>
 
   <footer>kunqianhu · music-tools</footer>
 </main>
+<script>
+  (function () {
+    var btn = document.getElementById('langToggle');
+    var saved = null;
+    try { saved = localStorage.getItem('hub-lang'); } catch (e) {}
+    var lang = saved === 'zh' ? 'zh' : 'en';
+    function apply() {
+      document.body.classList.toggle('lang-zh', lang === 'zh');
+      btn.textContent = lang === 'zh' ? 'EN' : '中文';
+      document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
+    }
+    btn.addEventListener('click', function () {
+      lang = lang === 'zh' ? 'en' : 'zh';
+      try { localStorage.setItem('hub-lang', lang); } catch (e) {}
+      apply();
+    });
+    apply();
+  })();
+</script>
 </body>
 </html>
